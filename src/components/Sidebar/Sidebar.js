@@ -12,7 +12,7 @@ const Sidebar = () => {
     const [rooms, setRooms] = useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:5000/all/rooms").then((response)=>{
+        axios.get("https://server-1-ceom.onrender.com/all/rooms").then((response)=>{
             setRooms(response.data)
         })
     },[])

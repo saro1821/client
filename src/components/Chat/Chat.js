@@ -19,12 +19,12 @@ const Chat = () => {
 
   useEffect(()=>{
  if(roomId){
-  axios.get(`http://localhost:5000/room/${roomId}`).then((response)=>{
+  axios.get(`https://server-1-ceom.onrender.com/room/${roomId}`).then((response)=>{
     setRoomName(response.data.name)
     setUpdatedAt(response.data.updatedAt)
     
   })
-  axios.get(`http://localhost:5000/messages/${roomId}`)
+  axios.get(`https://server-1-ceom.onrender.com/messages/${roomId}`)
   .then((response)=>{
     setMessages(response.data)
   })
@@ -52,7 +52,7 @@ const Chat = () => {
     }
     
 
-    await axios.post("http://localhost:5000/messages/new",{
+    await axios.post("https://server-1-ceom.onrender.com/messages/new",{
       message:input,
       name:user.displayName,
       timestamps:new Date(),
